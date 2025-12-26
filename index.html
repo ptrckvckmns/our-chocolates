@@ -185,24 +185,24 @@
             <h1 class="text-4xl md:text-5xl font-bold text-gold mb-6">
               <span data-i18n="heroTitle">Ontdek de Beste Belgische Chocolatiers</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto" data-i18n="heroDescription">
                 Van generaties-oude familiebedrijven tot innovatieve chocolatiers - ontdek de complete kaart van Belgische chocolade-excellentie.
             </p>
             
             <!-- Search Bar -->
             <div class="max-w-4xl mx-auto bg-cognac/30 backdrop-blur p-6 rounded-lg border border-gold/30">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                    <input type="text" id="searchLocation" placeholder="Locatie" class="px-4 py-3 rounded bg-charcoal border border-cognac focus:border-gold focus:outline-none text-gray-100">
+                    <input type="text" id="searchLocation" data-i18n-placeholder="searchLocation" placeholder="Locatie" class="px-4 py-3 rounded bg-charcoal border border-cognac focus:border-gold focus:outline-none text-gray-100">
                     <select id="searchType" class="px-4 py-3 rounded bg-charcoal border border-cognac focus:border-gold focus:outline-none text-gray-100">
-                        <option value="">Alle Types</option>
-                        <option value="winkel">Winkel</option>
-                        <option value="fabrikant">Fabrikant</option>
-                        <option value="beide">Beide</option>
+                        <option value="" data-i18n="searchAllTypes">Alle Types</option>
+                        <option value="winkel" data-i18n="searchWinkel">Winkel</option>
+                        <option value="fabrikant" data-i18n="searchFabrikant">Fabrikant</option>
+                        <option value="beide" data-i18n="searchBeide">Beide</option>
                     </select>
-                    <input type="text" id="searchKeyword" placeholder="Zoekwoord" class="px-4 py-3 rounded bg-charcoal border border-cognac focus:border-gold focus:outline-none text-gray-100">
+                    <input type="text" id="searchKeyword" data-i18n-placeholder="searchKeyword" placeholder="Zoekwoord" class="px-4 py-3 rounded bg-charcoal border border-cognac focus:border-gold focus:outline-none text-gray-100">
                 </div>
                 <button onclick="searchBusinesses()" class="w-full btn-gold text-charcoal font-bold py-4 rounded-lg">
-                    <i class="fas fa-search mr-2"></i>Zoeken
+                    <i class="fas fa-search mr-2"></i><span data-i18n="searchButton">Zoeken</span>
                 </button>
             </div>
         </div>
@@ -211,20 +211,20 @@
     <!-- Featured Businesses -->
     <section class="py-20 px-4 bg-gradient-to-b from-charcoal to-cognac/20">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-gold text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gold text-center mb-12" data-i18n="featuredTitle">
                 Uitgelichte Chocolatiers
             </h2>
             
             <div id="featuredBusinesses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="text-center text-gray-400 col-span-full py-12">
                     <i class="fas fa-spinner fa-spin text-4xl mb-4"></i>
-                    <p>undefined</p>
+                    <p data-i18n="loadingBusinesses">Bedrijven laden...</p>
                 </div>
             </div>
             
             <div class="text-center mt-12">
                 <a href="/directory" class="inline-block btn-gold text-charcoal font-bold px-8 py-4 rounded-lg">
-                    Bekijk Alle Chocolatiers
+                    <span data-i18n="viewAllButton">Bekijk Alle Chocolatiers</span>
                     <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -234,26 +234,26 @@
     <!-- Mission Section -->
     <section class="mission-bg py-20 px-4">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-gold mb-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-gold mb-8" data-i18n="missionTitle">
                 Onze Missie
             </h2>
-            <p class="text-xl text-gray-300 leading-relaxed mb-8">
+            <p class="text-xl text-gray-300 leading-relaxed mb-8" data-i18n="missionText">
                 België staat wereldwijd bekend om zijn chocolade vakmanschap. Onze gids werd gecreëerd om verborgen pareltjes in de schijnwerpers te zetten - kleine ambachtelijke chocolatiers die met passie en precisie de meest verfijnde creaties maken.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div class="text-center">
                     <i class="fas fa-map-marked-alt text-gold text-5xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Belgische Gids</h3>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="feature1Title">Belgische Gids</h3>
                     <p class="text-gray-400"><span data-i18n="feature1Text">Ontdek chocolatiers door heel België</span></p>
                 </div>
                 <div class="text-center">
                     <i class="fas fa-star text-gold text-5xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Kwaliteit Gegarandeerd</h3>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="feature2Title">Kwaliteit Gegarandeerd</h3>
                     <p class="text-gray-400"><span data-i18n="feature2Text">Alleen de beste ambachtslieden</span></p>
                 </div>
                 <div class="text-center">
                     <i class="fas fa-heart text-gold text-5xl mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Passie voor Chocolade</h3>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="feature3Title">Passie voor Chocolade</h3>
                     <p class="text-gray-400"><span data-i18n="feature3Text">Van boon tot reep</span></p>
                 </div>
             </div>
@@ -266,36 +266,36 @@
             <div class="mb-6">
                 <i class="fas fa-store text-gold text-6xl mb-4"></i>
             </div>
-            <h2 class="text-4xl md:text-5xl font-bold text-gold mb-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-gold mb-6" data-i18n="ctaTitle">
                 Mist je Chocoladebedrijf?
             </h2>
-            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p class="text-xl text-gray-300 mb-8 leading-relaxed" data-i18n="ctaDescription">
                 Maak deel uit van onze directory en bereik chocoladeliefhebbers door heel België. Presenteer uw ambachtelijke creaties aan een gepassioneerd publiek.
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
                 <a href="/add-listing" class="inline-block btn-gold text-charcoal font-bold px-8 py-4 rounded-lg hover:scale-105 transition-transform">
                     <i class="fas fa-plus mr-2"></i>
-                    Voeg Uw Bedrijf Toe
+                    <span data-i18n="ctaButton">Voeg Uw Bedrijf Toe</span>
                 </a>
                 <a href="/history" class="inline-block bg-charcoal/50 border-2 border-gold text-gold font-bold px-8 py-4 rounded-lg hover:bg-gold hover:text-charcoal transition-all">
                     <i class="fas fa-book mr-2"></i>
-                    Ontdek Onze Geschiedenis
+                    <span data-i18n="ctaHistoryButton">Ontdek Onze Geschiedenis</span>
                 </a>
             </div>
             <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-charcoal/50 p-6 rounded-lg border border-gold/30">
                     <i class="fas fa-users text-gold text-3xl mb-3"></i>
-                    <h3 class="text-lg font-bold mb-2">Bereik Meer Klanten</h3>
+                    <h3 class="text-lg font-bold mb-2" data-i18n="ctaBenefit1Title">Bereik Meer Klanten</h3>
                     <p class="text-gray-400 text-sm"><span data-i18n="visitors">Duizenden chocoladeliefhebbers bezoeken onze gids</span></p>
                 </div>
                 <div class="bg-charcoal/50 p-6 rounded-lg border border-gold/30">
                     <i class="fas fa-certificate text-gold text-3xl mb-3"></i>
-                    <h3 class="text-lg font-bold mb-2">Boost Uw Zichtbaarheid</h3>
+                    <h3 class="text-lg font-bold mb-2" data-i18n="ctaBenefit2Title">Boost Uw Zichtbaarheid</h3>
                     <p class="text-gray-400 text-sm"><span data-i18n="featured">Prominente plaatsing in onze directory</span></p>
                 </div>
                 <div class="bg-charcoal/50 p-6 rounded-lg border border-gold/30">
                     <i class="fas fa-chart-line text-gold text-3xl mb-3"></i>
-                    <h3 class="text-lg font-bold mb-2">Groei Uw Business</h3>
+                    <h3 class="text-lg font-bold mb-2" data-i18n="ctaBenefit3Title">Groei Uw Business</h3>
                     <p class="text-gray-400 text-sm"><span data-i18n="connection">Verbind met lokale en internationale klanten</span></p>
                 </div>
             </div>
@@ -306,10 +306,10 @@
     <section class="pairings-bg py-20 px-4">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-gold mb-4">
+                <h2 class="text-4xl md:text-5xl font-bold text-gold mb-4" data-i18n="pairingsHomeTitle">
                     Chocolade Pairings
                 </h2>
-                <p class="text-xl text-gray-300">
+                <p class="text-xl text-gray-300" data-i18n="pairingsHomeSubtitle">
                     Ontdek de perfecte combinaties voor uw chocolade ervaring
                 </p>
             </div>
@@ -320,8 +320,8 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-glass-whiskey text-gold text-5xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gold text-center mb-3">Whisky & Bourbon</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-gold text-center mb-3" data-i18n="pairingsWhiskyTitle">Whisky & Bourbon</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-i18n="pairingsWhiskyText">
                         Pure chocolade (70%+) met single malt Scotch of bourbon. De complexe smaken van hout, karamel en specerijen harmoniseren perfect.
                     </p>
                 </div>
@@ -331,8 +331,8 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-wine-glass-alt text-gold text-5xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gold text-center mb-3">Wijn</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-gold text-center mb-3" data-i18n="pairingsWineTitle">Wijn</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-i18n="pairingsWineText">
                         Rode port of Cabernet Sauvignon met donkere chocolade. Zoete dessertwijnen met melkchocolade. De tannines en zoetigheden balanceren elkaar.
                     </p>
                 </div>
@@ -342,8 +342,8 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-coffee text-gold text-5xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gold text-center mb-3">Koffie</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-gold text-center mb-3" data-i18n="pairingsCoffeeTitle">Koffie</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-i18n="pairingsCoffeeText">
                         Espresso of sterke koffie met pure chocolade. De bittere tonen complementeren elkaar. Cappuccino met melkchocolade voor zachtheid.
                     </p>
                 </div>
@@ -353,8 +353,8 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-cheese text-gold text-5xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gold text-center mb-3">Kaas</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-gold text-center mb-3" data-i18n="pairingsCheeseTitle">Kaas</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-i18n="pairingsCheeseText">
                         Gerijpte kazen zoals Manchego met pure chocolade. Blauwe kaas met melkchocolade. De zoute en zoete smaken creëren een unieke balans.
                     </p>
                 </div>
@@ -363,7 +363,7 @@
             <div class="text-center">
                 <a href="/pairings" class="inline-block btn-gold text-charcoal font-bold px-8 py-4 rounded-lg hover:scale-105 transition-transform">
                     <i class="fas fa-utensils mr-2"></i>
-                    Ontdek Alle Pairings
+                    <span data-i18n="pairingsViewAllButton">Ontdek Alle Pairings</span>
                 </a>
             </div>
         </div>
@@ -373,28 +373,28 @@
       <footer class="bg-charcoal border-t border-cognac/30 py-12 px-4">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 class="text-gold font-bold text-lg mb-4">Over</h3>
-            <p class="text-gray-400 text-sm"><span data-i18n="aboutText">Belgische Chocolade Gids verbindt chocoladeliefhebbers met de beste ambachtelijke chocolatiers van België.</span> met de beste ambachtelijke chocolatiers van België.</p>
+            <h3 class="text-gold font-bold text-lg mb-4" data-i18n="footerAboutTitle">Over</h3>
+            <p class="text-gray-400 text-sm" data-i18n="aboutText">Belgische Chocolade Gids verbindt chocoladeliefhebbers met de beste ambachtelijke chocolatiers van België.</p>
           </div>
           <div>
-            <h3 class="text-gold font-bold text-lg mb-4">Snelle Links</h3>
+            <h3 class="text-gold font-bold text-lg mb-4" data-i18n="footerLinksTitle">Snelle Links</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li><a href="/" class="hover:text-gold transition">Home</a></li>
-              <li><a href="/directory" class="hover:text-gold transition">Gids</a></li>
-              <li><a href="/pairings" class="hover:text-gold transition">Pairings</a></li>
-              <li><a href="/history" class="hover:text-gold transition">Geschiedenis</a></li>
-              <li><a href="/about" class="hover:text-gold transition">Over Ons</a></li>
+              <li><a href="/" class="hover:text-gold transition" data-i18n="home">Home</a></li>
+              <li><a href="/directory" class="hover:text-gold transition" data-i18n="directory">Gids</a></li>
+              <li><a href="/pairings" class="hover:text-gold transition" data-i18n="pairings">Pairings</a></li>
+              <li><a href="/history" class="hover:text-gold transition" data-i18n="history">Geschiedenis</a></li>
+              <li><a href="/about" class="hover:text-gold transition" data-i18n="about">Over Ons</a></li>
             </ul>
           </div>
           <div>
-            <h3 class="text-gold font-bold text-lg mb-4">Contact</h3>
+            <h3 class="text-gold font-bold text-lg mb-4" data-i18n="footerContactTitle">Contact</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li><i class="fas fa-envelope mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f59c9b939ab59a8087d8969d9a969a9994819086db9790">[email&#160;protected]</a></li>
               <li><i class="fas fa-phone mr-2"></i>+32 2 123 4567</li>
             </ul>
           </div>
           <div>
-            <h3 class="text-gold font-bold text-lg mb-4">Volg Ons</h3>
+            <h3 class="text-gold font-bold text-lg mb-4" data-i18n="footerFollowTitle">Volg Ons</h3>
             <div class="flex space-x-4">
               <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-facebook"></i></a>
               <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-instagram"></i></a>
@@ -403,7 +403,7 @@
           </div>
         </div>
         <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-cognac/30 text-center text-gray-500 text-sm">
-          <p>&copy; 2024 Belgische Chocolade Gids. Alle rechten voorbehouden</p>
+          <p data-i18n="footerText">&copy; 2024 Belgische Chocolade Gids. Alle rechten voorbehouden</p>
         </div>
       </footer>
     
