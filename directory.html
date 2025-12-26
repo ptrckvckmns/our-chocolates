@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS7C0PSYPK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GS7C0PSYPK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/images/favicon.jpg">
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <title>Chocolade Directory - Belgische Chocolade Gids</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'electric-green': '#00FF00',
+              'gold': '#FFD700',
+              'cognac': '#8B4513',
+              'charcoal': '#1C1C1C'
+            },
+            fontFamily: {
+              'serif': ['Playfair Display', 'serif'],
+              'sans': ['Inter', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+      .card-hover { transition: all 0.3s ease; }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+      }
+      #mapContainer {
+        height: 600px;
+        border-radius: 8px;
+      }
+      @media (max-width: 768px) {
+        #mapContainer {
+          height: 460px;
+        }
+      }
+    </style>
+</head>
+<body class="bg-charcoal text-gray-100">
+    
+      <nav class="fixed top-0 w-full bg-charcoal/95 backdrop-blur-sm border-b border-cognac/30 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b-2" style="border-image: linear-gradient(to right, #00FF00 0%, #00FF00 50%, #8B4513 100%) 1;">
+          <div class="flex justify-between items-center h-28 md:h-40">
+            <a href="/" class="flex items-center">
+              <img src="https://page.gensparksite.com/v1/base64_upload/af2b8f624999b4038dcf6ca92544385e" alt="Belgian Chocolate Guide Logo" class="h-20 md:h-32 w-auto">
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="/" class="text-gray-300 hover:text-gold transition" data-i18n="home">Home</a>
+              <a href="/directory" class="text-gray-300 hover:text-gold transition" data-i18n="directory">Gids</a>
+              <a href="/pairings" class="text-gray-300 hover:text-gold transition" data-i18n="pairings">Pairings</a>
+              <a href="/history" class="text-gray-300 hover:text-gold transition" data-i18n="history">Geschiedenis</a>
+              <a href="/about" class="text-gray-300 hover:text-gold transition" data-i18n="about">Over Ons</a>
+              <select id="languageSelector" class="bg-charcoal text-gray-300 border border-cognac rounded px-3 py-1 focus:outline-none focus:border-gold">
+                <option value="nl" selected>NL</option>
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
+            
+            <button id="mobileMenuBtn" class="md:hidden text-gold text-2xl">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div id="mobileMenu" class="hidden md:hidden bg-charcoal border-t border-cognac/30">
+          <div class="px-4 py-4 space-y-3">
+            <a href="/" class="block text-gray-300 hover:text-gold transition">Home</a>
+            <a href="/directory" class="block text-gray-300 hover:text-gold transition">Gids</a>
+            <a href="/pairings" class="block text-gray-300 hover:text-gold transition">Pairings</a>
+            <a href="/history" class="block text-gray-300 hover:text-gold transition">Geschiedenis</a>
+            <a href="/about" class="block text-gray-300 hover:text-gold transition">Over Ons</a>
+            <select id="mobileLanguageSelector" class="w-full bg-charcoal text-gray-300 border border-cognac rounded px-3 py-2">
+              <option value="nl" selected>Nederlands</option>
+              <option value="fr">Français</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+        </div>
+      </nav>
+    
+    
+    <div class="pt-32 md:pt-48 pb-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-gold mb-8">Belgische Chocolade Directory</h1>
+            
+            <!-- Filters -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                <select id="filterType" class="px-4 py-3 rounded bg-cognac/30 border border-cognac focus:border-gold focus:outline-none">
+                    <option value="">Alle Types</option>
+                    <option value="winkel">Winkel</option>
+                    <option value="fabrikant">Fabrikant</option>
+                    <option value="beide">Beide</option>
+                </select>
+                <select id="filterProvince" class="px-4 py-3 rounded bg-cognac/30 border border-cognac focus:border-gold focus:outline-none">
+                    <option value="">Alle Provincies</option>
+                </select>
+                <select id="filterCity" class="px-4 py-3 rounded bg-cognac/30 border border-cognac focus:border-gold focus:outline-none">
+                    <option value="">Alle Steden</option>
+                </select>
+                <input type="text" id="searchKeyword" placeholder="Zoeken..." class="px-4 py-3 rounded bg-cognac/30 border border-cognac focus:border-gold focus:outline-none">
+            </div>
+            
+            <p id="resultsCount" class="text-gray-400 mb-4">Laden...</p>
+            
+            <!-- Map and List Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Map -->
+                <div>
+                    <div class="bg-cognac/20 p-4 rounded-lg mb-4 border border-gold/30">
+                        <div class="flex items-center justify-between mb-2">
+                            <h2 class="text-xl font-bold text-gold">
+                                <i class="fas fa-map-marked-alt mr-2"></i>
+                                Kaart
+                            </h2>
+                        </div>
+                        <!-- Leaflet Map Container -->
+                        <div id="mapContainer"></div>
+                    </div>
+                </div>
+                
+                <!-- Business List -->
+                <div>
+                    <div id="businessList" class="space-y-4">
+                        <div class="text-center text-gray-400 py-12">
+                            <i class="fas fa-spinner fa-spin text-4xl mb-4"></i>
+                            <p>Laden...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+      <footer class="bg-charcoal border-t border-cognac/30 py-12 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Over</h3>
+            <p class="text-gray-400 text-sm">Belgische Chocolade Gids verbindt chocoladeliefhebbers met de beste ambachtelijke chocolatiers van België.</p>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Snelle Links</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="/" class="hover:text-gold transition">Home</a></li>
+              <li><a href="/directory" class="hover:text-gold transition">Gids</a></li>
+              <li><a href="/pairings" class="hover:text-gold transition">Pairings</a></li>
+              <li><a href="/history" class="hover:text-gold transition">Geschiedenis</a></li>
+              <li><a href="/about" class="hover:text-gold transition">Over Ons</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Contact</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><i class="fas fa-envelope mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb82858d84ab849e99c68883848884878a9f8e98c5898e">[email&#160;protected]</a></li>
+              <li><i class="fas fa-phone mr-2"></i>+32 2 123 4567</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Volg Ons</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-cognac/30 text-center text-gray-500 text-sm">
+          <p>&copy; 2024 Belgische Chocolade Gids. Alle rechten voorbehouden</p>
+        </div>
+      </footer>
+    
+    <!-- Leaflet JS -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+    <script src="/static/directory.js"></script>
+</body>
+</html>
+
+

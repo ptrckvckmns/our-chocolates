@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS7C0PSYPK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GS7C0PSYPK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/images/favicon.jpg">
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <title>Chocolade & Whisky Pairings - Belgische Chocolade Gids</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'electric-green': '#00FF00',
+              'gold': '#FFD700',
+              'cognac': '#8B4513',
+              'charcoal': '#1C1C1C'
+            },
+            fontFamily: {
+              'serif': ['Playfair Display', 'serif'],
+              'sans': ['Inter', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-charcoal text-gray-100">
+    
+      <nav class="fixed top-0 w-full bg-charcoal/95 backdrop-blur-sm border-b border-cognac/30 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b-2" style="border-image: linear-gradient(to right, #00FF00 0%, #00FF00 50%, #8B4513 100%) 1;">
+          <div class="flex justify-between items-center h-28 md:h-40">
+            <a href="/" class="flex items-center">
+              <img src="https://page.gensparksite.com/v1/base64_upload/af2b8f624999b4038dcf6ca92544385e" alt="Belgian Chocolate Guide Logo" class="h-20 md:h-32 w-auto">
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="/" class="text-gray-300 hover:text-gold transition" data-i18n="home">Home</a>
+              <a href="/directory" class="text-gray-300 hover:text-gold transition" data-i18n="directory">Gids</a>
+              <a href="/pairings" class="text-gray-300 hover:text-gold transition" data-i18n="pairings">Pairings</a>
+              <a href="/history" class="text-gray-300 hover:text-gold transition" data-i18n="history">Geschiedenis</a>
+              <a href="/about" class="text-gray-300 hover:text-gold transition" data-i18n="about">Over Ons</a>
+              <select id="languageSelector" class="bg-charcoal text-gray-300 border border-cognac rounded px-3 py-1 focus:outline-none focus:border-gold">
+                <option value="nl" selected>NL</option>
+                <option value="fr" >FR</option>
+                <option value="en" >EN</option>
+              </select>
+            </div>
+            
+            <button id="mobileMenuBtn" class="md:hidden text-gold text-2xl">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div id="mobileMenu" class="hidden md:hidden bg-charcoal border-t border-cognac/30">
+          <div class="px-4 py-4 space-y-3">
+            <a href="/" class="block text-gray-300 hover:text-gold transition">Home</a>
+            <a href="/directory" class="block text-gray-300 hover:text-gold transition">Gids</a>
+            <a href="/pairings" class="block text-gray-300 hover:text-gold transition">Pairings</a>
+            <a href="/history" class="block text-gray-300 hover:text-gold transition">Geschiedenis</a>
+            <a href="/about" class="block text-gray-300 hover:text-gold transition">Over Ons</a>
+            <select id="mobileLanguageSelector" class="w-full bg-charcoal text-gray-300 border border-cognac rounded px-3 py-2">
+              <option value="nl" selected>Nederlands</option>
+              <option value="fr" >Français</option>
+              <option value="en" >English</option>
+            </select>
+          </div>
+        </div>
+      </nav>
+    
+    
+    <div class="pt-32 md:pt-48 pb-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-gold mb-8 text-center">Chocolade Food Pairings</h1>
+            
+            <div class="bg-cognac/20 rounded-lg p-8 border border-gold/30 mb-12">
+                <h2 class="text-3xl font-bold text-gold mb-4">De Kunst van Chocolade Pairing</h2>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Chocolade pairing is een verfijnde kunst waarbij smaken, texturen en aroma's elkaar complementeren en versterken. Van whisky en wijn tot koffie en kaas - ontdek de perfecte combinaties die uw chocolade ervaring naar een hoger niveau tillen.
+                </p>
+            </div>
+            
+            <!-- Whisky & Bourbon Section -->
+            <div class="mb-16">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="fas fa-glass-whiskey text-gold text-4xl"></i>
+                    <h2 class="text-3xl font-bold text-gold">Whisky & Bourbon</h2>
+                </div>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Whisky en chocolade delen complexe smaakprofielen met hout, specerijen, karamel en rooknoten die elkaar prachtig aanvullen.
+                </p>
+            
+            <div class="space-y-6">
+                <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                    <h3 class="text-2xl font-bold text-gold mb-2">Pure Chocolade (70-80%)</h3>
+                    <p class="text-lg text-electric-green mb-3">+ Single Malt Scotch (Speyside)</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Speyside whisky's met honing, fruitige en bloemige tonen complementeren de bitterzoete complexiteit van pure chocolade. Probeer Glenfiddich of Macallan.
+                    </p>
+                </div>
+                
+                <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                    <h3 class="text-2xl font-bold text-gold mb-2">Chocolade met gezouten karamel</h3>
+                    <p class="text-lg text-electric-green mb-3">+ Bourbon (Kentucky)</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        De vanille, karamel en zoete maïstonen van bourbon zijn perfect voor chocolade met gezouten karamel. Probeer Buffalo Trace of Maker's Mark.
+                    </p>
+                </div>
+                
+                <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                    <h3 class="text-2xl font-bold text-gold mb-2">Extra pure chocolade (85%+)</h3>
+                    <p class="text-lg text-electric-green mb-3">+ Peated Islay Whisky</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        De rokerige, turfachtige tonen van Islay whisky zoals Laphroaig of Ardbeg creëren een dramatische, intense pairing met zeer pure chocolade.
+                    </p>
+                </div>
+                
+                <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                    <h3 class="text-2xl font-bold text-gold mb-2">Melkchocolade met noten</h3>
+                    <p class="text-lg text-electric-green mb-3">+ Irish Whiskey</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        De zachte, drievoudig gedistilleerde Irish whiskey met zachte vanille en nootachtige tonen past bij melkchocolade met hazelnoot of amandel.
+                    </p>
+                </div>
+                
+                <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                    <h3 class="text-2xl font-bold text-gold mb-2">Chocolade met specerijen</h3>
+                    <p class="text-lg text-electric-green mb-3">+ Rye Whiskey</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        De kruidige, peppery tonen van rye whiskey zijn ideaal voor chocolade met kaneel, chili of andere specerijen. Probeer Bulleit Rye.
+                    </p>
+                </div>
+                
+                <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                    <h3 class="text-2xl font-bold text-gold mb-2">Chocolade met kersen of bessen</h3>
+                    <p class="text-lg text-electric-green mb-3">+ Sherry Cask Whisky</p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Whisky gerijpt op sherry vaten (zoals GlenDronach) met gedroogd fruit en noten harmonieert met chocolade met kersen, frambozen of rozijnen.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-cognac/20 rounded-lg p-8 border border-gold/30 mt-8">
+                <h2 class="text-3xl font-bold text-gold mb-4">Proeftips voor whisky & chocolade</h2>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                        <span><strong>Voeg geen ijs toe</strong> - Dit verdunt de whisky en verhindert de pairing</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                        <span><strong>Neem kleine slokken</strong> - Laat de whisky mengen met de chocolade in je mond</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                        <span><strong>Begin met lagere ABV</strong> - 40-43% alcohol werkt beter dan cask strength</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                        <span><strong>Match intensiteiten</strong> - Sterke whisky met pure chocolade, zachte met melkchocolade</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                        <span><strong>Ruik eerst</strong> - De neus van beide producten bereidt je smaakpapillen voor</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bg-cognac/20 rounded-lg p-8 border border-gold/30 mt-8">
+                <h2 class="text-3xl font-bold text-gold mb-4">Proefvolgorde</h2>
+                <ol class="space-y-3 text-gray-300 list-decimal list-inside">
+                    <li>Neem een kleine slok whisky, laat circuleren en doorslikken</li>
+                    <li>Wacht 10-15 seconden om de smaak te laten bezinken</li>
+                    <li>Neem een stukje chocolade en laat langzaam smelten</li>
+                    <li>Wanneer de chocolade half gesmolten is, neem een kleine slok whisky</li>
+                    <li>Laat beide smaken mengen en ontdek nieuwe smaakdimensies</li>
+                    <li>Let op de finish - hoe lang blijven de smaken hangen?</li>
+                </ol>
+            </div>
+            </div>
+            
+            <div class="mb-16">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="fas fa-wine-glass-alt text-gold text-4xl"></i>
+                    <h2 class="text-3xl font-bold text-gold">Wijn Pairings</h2>
+                </div>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Wijn en chocolade creëren magische combinaties wanneer tannines, zuren en zoetigheden in balans zijn.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Donkere Chocolade (70%+)</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Rode Port of Cabernet Sauvignon</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Volle rode wijnen met sterke tannines balanceren de bitterheid van pure chocolade. Port met zijn zoetigheden complementeert perfect.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Melkchocolade</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Moscato d'Asti of Banyuls</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Zoete dessertwijnen met lichte moussering en fruitige aroma's harmoniseren met de romigheid van melkchocolade.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Witte Chocolade</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Riesling of Champagne</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            De zuurgraad van deze wijnen klieft door de zoetigheden en boteraccenten van witte chocolade.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Chocolade met Fruit</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Pinot Noir of Lambrusco</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Fruitige rode wijnen met kersen- en bessenaroma's matchen perfect met chocolade met frambozen of kersen.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-cognac/20 rounded-lg p-8 border border-gold/30 mt-8">
+                    <h3 class="text-2xl font-bold text-gold mb-4">Wijn Pairing Tips</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                            <span>Wijn moet zoeter zijn dan chocolade om bitterheid te vermijden</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                            <span>Match intensiteiten - lichte chocolade met lichte wijn</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                            <span>Serveer op kamertemperatuur voor optimale smaak</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Koffie Section -->
+            <div class="mb-16">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="fas fa-coffee text-gold text-4xl"></i>
+                    <h2 class="text-3xl font-bold text-gold">Koffie Pairings</h2>
+                </div>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    ${tr.coffeeIntro}
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Pure Chocolade (70-85%)</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Espresso of Franse Pers</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Sterke, pure koffie met de bittere tonen van donkere chocolade creëert een intense, bevredigende combinatie.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Melkchocolade</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Cappuccino of Latte</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Koffie met melk en melkchocolade delen romigheid en zachte smaken die elkaar aanvullen.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Chocolade met Noten</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Macchiato of Cortado</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            De nootachtige tonen in beide producten resoneren en creëren een harmonieuze ervaring.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Chocolade met Caramel</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Cold Brew of Ijskoffie</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            De zachte, zoete smaken van cold brew complementeren caramel chocolade zonder bitterheid.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-cognac/20 rounded-lg p-8 border border-gold/30 mt-8">
+                    <h3 class="text-2xl font-bold text-gold mb-4">Koffie Pairing Tips</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                            <span>Laat koffie iets afkoelen voor optimale smaakbeleving</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                            <span>Probeer single-origin koffies voor specifieke smaakprofielen</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                            <span>Neem kleine stukjes chocolade tussen slokken door</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Kaas Section -->
+            <div class="mb-16">
+                <div class="flex items-center gap-4 mb-6">
+                    <i class="fas fa-cheese text-gold text-4xl"></i>
+                    <h2 class="text-3xl font-bold text-gold">Kaas Pairings</h2>
+                </div>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    De combinatie van zoete chocolade met zoute, umami-rijke kazen creëert verrassende en heerlijke contrasten.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Donkere Chocolade (70%+)</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Manchego of Pecorino</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Gerijpte schapenkazen met nootachtige smaken en korrelstructuur matchen met pure chocolade.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Melkchocolade</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Blauwe Kaas (Roquefort, Gorgonzola)</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            De zoete romigheid van melkchocolade balanceert de sterke, zoute smaken van blauwe kaas perfect.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Witte Chocolade</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Brie of Camembert</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Zachte, romige kazen met boter-achtige smaken harmoniseren met de zoete vanille noten van witte chocolade.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <h3 class="text-2xl font-bold text-gold mb-2">Chocolade met Noten</h3>
+                        <p class="text-lg text-electric-green mb-3">+ Oude Gouda of Gruyère</p>
+                        <p class="text-gray-300 leading-relaxed">
+                            De karamel-achtige kristallen in oude kazen en noten in chocolade creëren een rijke, complexe combinatie.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-cognac/20 rounded-lg p-8 border border-gold/30 mt-8">
+                    <h3 class="text-2xl font-bold text-gold mb-4">Kaas Pairing Tips</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                            <span>Laat kaas 30 minuten voor serving op kamertemperatuur komen</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                            <span>Begin met mildere combinaties en werk naar intensere smaken</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-gold mr-3 mt-1"></i>
+                            <span>Voeg noten en honing toe voor extra dimensie</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gold mb-6">Andere Verrassende Pairings</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-apple-alt text-gold text-2xl"></i>
+                            <h3 class="text-xl font-bold text-gold">Fruit</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Verse frambozen, aardbeien of sinaasappel met donkere chocolade. De zuren in fruit klieven door de rijkdom.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-pepper-hot text-gold text-2xl"></i>
+                            <h3 class="text-xl font-bold text-gold">Chili</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Donkere chocolade met chipotle of cayenne peper. De hitte versterkt de complexiteit van cacao.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-leaf text-gold text-2xl"></i>
+                            <h3 class="text-xl font-bold text-gold">Thee</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Earl Grey met melkchocolade, of groene thee met witte chocolade. Tannines en aroma's zijn synergieën.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-bacon text-gold text-2xl"></i>
+                            <h3 class="text-xl font-bold text-gold">Bacon</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Gerookt bacon met donkere chocolade. Zoet, zout, en umami creëren een onverwachte maar heerlijke combinatie.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-ice-cream text-gold text-2xl"></i>
+                            <h3 class="text-xl font-bold text-gold">IJs</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Vanille ijs met warme chocoladesaus. De temperatuurcontrasten en texturen maken dit tijdloos.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-seedling text-gold text-2xl"></i>
+                            <h3 class="text-xl font-bold text-gold">Zout</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Zeezout of fleur de sel op pure chocolade. Het zout versterkt de zoetigheden en complexiteit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-cognac/30 to-gold/20 rounded-lg p-8 border-2 border-gold/50">
+                <h2 class="text-3xl font-bold text-gold mb-6 text-center">Algemene Pairing Principes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-gold mb-3">Match of Contrast</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Je kunt smaken matchen (bv. nootachtige chocolade met nootachtige kaas) of contrasteren (zoet vs zout).
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gold mb-3">Intensiteit Balans</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Sterke smaken met sterke chocolade, subtiele smaken met milde chocolade. Balans is de sleutel.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gold mb-3">Temperatuur</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Laat chocolade en pairings op kamertemperatuur komen voor optimale smaakbeleving.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gold mb-3">Experimenteer</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            De beste pairings ontdek je door te experimenteren. Vertrouw je smaakpapillen en heb plezier!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+      <footer class="bg-charcoal border-t border-cognac/30 py-12 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Over</h3>
+            <p class="text-gray-400 text-sm">Belgische Chocolade Gids verbindt chocoladeliefhebbers met de beste ambachtelijke chocolatiers van België.</p>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Snelle Links</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="/" class="hover:text-gold transition">Home</a></li>
+              <li><a href="/directory" class="hover:text-gold transition">Gids</a></li>
+              <li><a href="/pairings" class="hover:text-gold transition">Pairings</a></li>
+              <li><a href="/history" class="hover:text-gold transition">Geschiedenis</a></li>
+              <li><a href="/about" class="hover:text-gold transition">Over Ons</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Contact</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><i class="fas fa-envelope mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a43444c456a455f58074942454945464b5e4f5904484f">[email&#160;protected]</a></li>
+              <li><i class="fas fa-phone mr-2"></i>+32 2 123 4567</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Volg Ons</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-cognac/30 text-center text-gray-500 text-sm">
+          <p>&copy; 2024 Belgische Chocolade Gids. Alle rechten voorbehouden</p>
+        </div>
+      </footer>
+    
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>  <script src="/static/translations.js"></script>
+</body>
+</html>

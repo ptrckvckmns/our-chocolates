@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS7C0PSYPK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GS7C0PSYPK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/images/favicon.jpg">
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <title>Geschiedenis van Belgische Chocolade - Belgische Chocolade Gids</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'electric-green': '#00FF00',
+              'gold': '#FFD700',
+              'cognac': '#8B4513',
+              'charcoal': '#1C1C1C'
+            },
+            fontFamily: {
+              'serif': ['Playfair Display', 'serif'],
+              'sans': ['Inter', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+      .timeline-item { position: relative; padding-left: 2rem; }
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        background: #FFD700;
+        border-radius: 50%;
+        border: 3px solid #1C1C1C;
+      }
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        left: 0.4375rem;
+        top: 1.5rem;
+        bottom: -1rem;
+        width: 0.125rem;
+        background: #8B4513;
+      }
+      .timeline-item:last-child::after { display: none; }
+    </style>
+</head>
+<body class="bg-charcoal text-gray-100">
+    
+      <nav class="fixed top-0 w-full bg-charcoal/95 backdrop-blur-sm border-b border-cognac/30 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b-2" style="border-image: linear-gradient(to right, #00FF00 0%, #00FF00 50%, #8B4513 100%) 1;">
+          <div class="flex justify-between items-center h-28 md:h-40">
+            <a href="/" class="flex items-center">
+              <img src="https://page.gensparksite.com/v1/base64_upload/af2b8f624999b4038dcf6ca92544385e" alt="Belgian Chocolate Guide Logo" class="h-20 md:h-32 w-auto">
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="/" class="text-gray-300 hover:text-gold transition" data-i18n="home">Home</a>
+              <a href="/directory" class="text-gray-300 hover:text-gold transition" data-i18n="directory">Gids</a>
+              <a href="/pairings" class="text-gray-300 hover:text-gold transition" data-i18n="pairings">Pairings</a>
+              <a href="/history" class="text-gray-300 hover:text-gold transition" data-i18n="history">Geschiedenis</a>
+              <a href="/about" class="text-gray-300 hover:text-gold transition" data-i18n="about">Over Ons</a>
+              <select id="languageSelector" class="bg-charcoal text-gray-300 border border-cognac rounded px-3 py-1 focus:outline-none focus:border-gold">
+                <option value="nl" selected>NL</option>
+                <option value="fr" >FR</option>
+                <option value="en" >EN</option>
+              </select>
+            </div>
+            
+            <button id="mobileMenuBtn" class="md:hidden text-gold text-2xl">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div id="mobileMenu" class="hidden md:hidden bg-charcoal border-t border-cognac/30">
+          <div class="px-4 py-4 space-y-3">
+            <a href="/" class="block text-gray-300 hover:text-gold transition">Home</a>
+            <a href="/directory" class="block text-gray-300 hover:text-gold transition">Gids</a>
+            <a href="/pairings" class="block text-gray-300 hover:text-gold transition">Pairings</a>
+            <a href="/history" class="block text-gray-300 hover:text-gold transition">Geschiedenis</a>
+            <a href="/about" class="block text-gray-300 hover:text-gold transition">Over Ons</a>
+            <select id="mobileLanguageSelector" class="w-full bg-charcoal text-gray-300 border border-cognac rounded px-3 py-2">
+              <option value="nl" selected>Nederlands</option>
+              <option value="fr" >Français</option>
+              <option value="en" >English</option>
+            </select>
+          </div>
+        </div>
+      </nav>
+    
+    
+    <div class="pt-32 md:pt-48 pb-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-gold mb-8 text-center">Geschiedenis van Belgische Chocolade</h1>
+            
+            <div class="bg-cognac/20 rounded-lg p-8 border border-gold/30 mb-12">
+                <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                    België's chocoladetraditie is wereldberoemd en strekt zich uit over meer dan vier eeuwen. Van de eerste cacaobonen die in de 17e eeuw in Europa aankwamen, tot de innovatieve pralines die we vandaag kennen - de Belgische chocolade geschiedenis is een verhaal van passie, innovatie en vakmanschap.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Ontdek hoe België uitgroeide tot een van de meest gerespecteerde chocoladeproducenten ter wereld.
+                </p>
+            </div>
+            
+            <h2 class="text-3xl font-bold text-gold mb-8">Tijdlijn</h2>
+            
+            <div class="space-y-8">
+                <!-- 1635 -->
+                <div class="timeline-item">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-gold font-bold text-2xl">1635</span>
+                            <h3 class="text-xl font-bold">Cacao komt naar de Lage Landen</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            ${tr.year1635Desc}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 1857 -->
+                <div class="timeline-item">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-gold font-bold text-2xl">1857</span>
+                            <h3 class="text-xl font-bold">Neuhaus wordt opgericht</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            ${tr.year1857Desc}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 1912 -->
+                <div class="timeline-item">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-gold font-bold text-2xl">1912</span>
+                            <h3 class="text-xl font-bold">De Praline wordt uitgevonden</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            ${tr.year1912Desc}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 1915 -->
+                <div class="timeline-item">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-gold font-bold text-2xl">1915</span>
+                            <h3 class="text-xl font-bold">De Ballotin wordt geïntroduceerd</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            ${tr.year1915Desc}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 1926 -->
+                <div class="timeline-item">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-gold font-bold text-2xl">1926</span>
+                            <h3 class="text-xl font-bold">Godiva wordt geboren</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            ${tr.year1926Desc}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 1958 -->
+                <div class="timeline-item">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-gold font-bold text-2xl">1958</span>
+                            <h3 class="text-xl font-bold">Guylian's zeeschelpen</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            ${tr.year1958Desc}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 1980s -->
+                <div class="timeline-item">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-gold font-bold text-2xl">1980s</span>
+                            <h3 class="text-xl font-bold">Opkomst van Ambachtelijke Chocolatiers</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            ${tr.year1980sDesc}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 2000s -->
+                <div class="timeline-item">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-gold font-bold text-2xl">2000s</span>
+                            <h3 class="text-xl font-bold">Bean-to-Bar Beweging</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            ${tr.year2000sDesc}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Today -->
+                <div class="timeline-item">
+                    <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-gold font-bold text-2xl">Vandaag</span>
+                            <h3 class="text-xl font-bold">Wereldwijde Erkenning</h3>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            ${tr.yearTodayDesc}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Belgian Chocolate Facts -->
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold text-gold mb-8 text-center">Belgische Chocolade Feiten</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-cognac/30 to-cognac/10 rounded-lg p-6 border border-gold/30">
+                        <div class="text-gold text-4xl mb-3">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Uitvinder van de Praline</h3>
+                        <p class="text-gray-300">België bedacht de gevulde praline in 1912 - nu wereldwijd gekopieerd maar nooit geëvenaard</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-cognac/30 to-cognac/10 rounded-lg p-6 border border-gold/30">
+                        <div class="text-gold text-4xl mb-3">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">2.000+ Chocoladewinkels</h3>
+                        <p class="text-gray-300">Meer chocoladewinkels per capita dan elk ander land ter wereld</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-cognac/30 to-cognac/10 rounded-lg p-6 border border-gold/30">
+                        <div class="text-gold text-4xl mb-3">
+                            <i class="fas fa-weight"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">220.000 ton per jaar</h3>
+                        <p class="text-gray-300">België produceert jaarlijks meer dan 220.000 ton hoogwaardige chocolade</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-cognac/30 to-cognac/10 rounded-lg p-6 border border-gold/30">
+                        <div class="text-gold text-4xl mb-3">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">8 kg per persoon</h3>
+                        <p class="text-gray-300">Belgen consumeren gemiddeld 8 kilogram chocolade per persoon per jaar</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-cognac/30 to-cognac/10 rounded-lg p-6 border border-gold/30">
+                        <div class="text-gold text-4xl mb-3">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Wereldwijde Export</h3>
+                        <p class="text-gray-300">Belgische chocolade wordt geëxporteerd naar meer dan 100 landen wereldwijd</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-cognac/30 to-cognac/10 rounded-lg p-6 border border-gold/30">
+                        <div class="text-gold text-4xl mb-3">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Generaties Vakmanschap</h3>
+                        <p class="text-gray-300">Vele chocoladebedrijven zijn familiebedrijven die hun ambacht van generatie op generatie doorgeven</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="mt-16 bg-gradient-to-r from-cognac to-cognac/50 rounded-lg p-8 border border-gold/30 text-center">
+                <h2 class="text-3xl font-bold text-gold mb-4">Ontdek de Traditie</h2>
+                <p class="text-lg text-gray-300 mb-6">
+                    ${tr.ctaDesc}
+                </p>
+                <a href="/directory" class="inline-block btn-gold text-charcoal font-bold px-8 py-4 rounded-lg" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); transition: all 0.3s ease;">
+                    <i class="fas fa-map-marked-alt mr-2"></i>
+                    ${tr.ctaBtn}
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+      <footer class="bg-charcoal border-t border-cognac/30 py-12 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Over</h3>
+            <p class="text-gray-400 text-sm">Belgische Chocolade Gids verbindt chocoladeliefhebbers met de beste ambachtelijke chocolatiers van België.</p>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Snelle Links</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="/" class="hover:text-gold transition">Home</a></li>
+              <li><a href="/directory" class="hover:text-gold transition">Gids</a></li>
+              <li><a href="/pairings" class="hover:text-gold transition">Pairings</a></li>
+              <li><a href="/history" class="hover:text-gold transition">Geschiedenis</a></li>
+              <li><a href="/about" class="hover:text-gold transition">Over Ons</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Contact</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><i class="fas fa-envelope mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c35323a331c33292e713f34333f33303d28392f723e39">[email&#160;protected]</a></li>
+              <li><i class="fas fa-phone mr-2"></i>+32 2 123 4567</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Volg Ons</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-cognac/30 text-center text-gray-500 text-sm">
+          <p>&copy; 2024 Belgische Chocolade Gids. Alle rechten voorbehouden</p>
+        </div>
+      </footer>
+    
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>  <script src="/static/translations.js"></script>
+</body>
+</html>

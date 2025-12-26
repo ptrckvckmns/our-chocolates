@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS7C0PSYPK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GS7C0PSYPK');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/images/favicon.jpg">
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <title>Over Ons - Belgische Chocolade Gids</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'electric-green': '#00FF00',
+              'gold': '#FFD700',
+              'cognac': '#8B4513',
+              'charcoal': '#1C1C1C'
+            },
+            fontFamily: {
+              'serif': ['Playfair Display', 'serif'],
+              'sans': ['Inter', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-charcoal text-gray-100">
+    
+      <nav class="fixed top-0 w-full bg-charcoal/95 backdrop-blur-sm border-b border-cognac/30 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b-2" style="border-image: linear-gradient(to right, #00FF00 0%, #00FF00 50%, #8B4513 100%) 1;">
+          <div class="flex justify-between items-center h-28 md:h-40">
+            <a href="/" class="flex items-center">
+              <img src="https://page.gensparksite.com/v1/base64_upload/af2b8f624999b4038dcf6ca92544385e" alt="Belgian Chocolate Guide Logo" class="h-20 md:h-32 w-auto">
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="/" class="text-gray-300 hover:text-gold transition" data-i18n="home">Home</a>
+              <a href="/directory" class="text-gray-300 hover:text-gold transition" data-i18n="directory">Gids</a>
+              <a href="/pairings" class="text-gray-300 hover:text-gold transition" data-i18n="pairings">Pairings</a>
+              <a href="/history" class="text-gray-300 hover:text-gold transition" data-i18n="history">Geschiedenis</a>
+              <a href="/about" class="text-gray-300 hover:text-gold transition" data-i18n="about">Over Ons</a>
+              <select id="languageSelector" class="bg-charcoal text-gray-300 border border-cognac rounded px-3 py-1 focus:outline-none focus:border-gold">
+                <option value="nl" selected>NL</option>
+                <option value="fr" >FR</option>
+                <option value="en" >EN</option>
+              </select>
+            </div>
+            
+            <button id="mobileMenuBtn" class="md:hidden text-gold text-2xl">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div id="mobileMenu" class="hidden md:hidden bg-charcoal border-t border-cognac/30">
+          <div class="px-4 py-4 space-y-3">
+            <a href="/" class="block text-gray-300 hover:text-gold transition">Home</a>
+            <a href="/directory" class="block text-gray-300 hover:text-gold transition">Gids</a>
+            <a href="/pairings" class="block text-gray-300 hover:text-gold transition">Pairings</a>
+            <a href="/history" class="block text-gray-300 hover:text-gold transition">Geschiedenis</a>
+            <a href="/about" class="block text-gray-300 hover:text-gold transition">Over Ons</a>
+            <select id="mobileLanguageSelector" class="w-full bg-charcoal text-gray-300 border border-cognac rounded px-3 py-2">
+              <option value="nl" selected>Nederlands</option>
+              <option value="fr" >Français</option>
+              <option value="en" >English</option>
+            </select>
+          </div>
+        </div>
+      </nav>
+    
+    
+    <div class="pt-32 md:pt-48 pb-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-gold mb-8 text-center">Over Onze Gids</h1>
+            
+            <div class="bg-cognac/20 rounded-lg p-8 border border-gold/30 mb-8">
+                <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                    ${tr.intro1}
+                </p>
+                <p class="text-xl text-gray-300 leading-relaxed">
+                    ${tr.intro2}
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                    <div class="text-gold text-5xl mb-4">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gold mb-3">Verborgen Juweeltjes</h3>
+                    <p class="text-gray-300">
+                        ${tr.feature1Desc}
+                    </p>
+                </div>
+                
+                <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
+                    <div class="text-gold text-5xl mb-4">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gold mb-3">Authentieke Kwaliteit</h3>
+                    <p class="text-gray-300">
+                        ${tr.feature2Desc}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+      <footer class="bg-charcoal border-t border-cognac/30 py-12 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Over</h3>
+            <p class="text-gray-400 text-sm">Belgische Chocolade Gids verbindt chocoladeliefhebbers met de beste ambachtelijke chocolatiers van België.</p>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Snelle Links</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="/" class="hover:text-gold transition">Home</a></li>
+              <li><a href="/directory" class="hover:text-gold transition">Gids</a></li>
+              <li><a href="/pairings" class="hover:text-gold transition">Pairings</a></li>
+              <li><a href="/history" class="hover:text-gold transition">Geschiedenis</a></li>
+              <li><a href="/about" class="hover:text-gold transition">Over Ons</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Contact</h3>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><i class="fas fa-envelope mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5bcbbb3ba95baa0a7f8b6bdbab6bab9b4a1b0a6fbb7b0">[email&#160;protected]</a></li>
+              <li><i class="fas fa-phone mr-2"></i>+32 2 123 4567</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-gold font-bold text-lg mb-4">Volg Ons</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-cognac/30 text-center text-gray-500 text-sm">
+          <p>&copy; 2024 Belgische Chocolade Gids. Alle rechten voorbehouden</p>
+        </div>
+      </footer>
+    
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>  <script src="/static/translations.js"></script>
+</body>
+</html>
