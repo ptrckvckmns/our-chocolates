@@ -1,55 +1,8 @@
 // Directory page functionality
-let currentLang = localStorage.getItem('language') || 'nl';
+// Note: currentLang, translations, and t() are provided by translations.js
 let allBusinesses = [];
 let map = null;
 let markers = [];
-
-// Translation strings
-const translations = {
-  nl: {
-    allProvinces: 'Alle Provincies',
-    allCities: 'Alle Steden',
-    errorLoading: 'Fout bij laden van bedrijven. Probeer het later opnieuw.',
-    noResults: 'Geen bedrijven gevonden. Pas uw filters aan.',
-    callUs: 'Bel ons',
-    emailUs: 'Email ons',
-    visitWebsite: 'Bezoek website',
-    details: 'Details',
-    business: 'bedrijf',
-    businesses: 'bedrijven',
-    found: 'gevonden'
-  },
-  fr: {
-    allProvinces: 'Toutes les Provinces',
-    allCities: 'Toutes les Villes',
-    errorLoading: 'Erreur lors du chargement des entreprises. Veuillez réessayer plus tard.',
-    noResults: 'Aucune entreprise trouvée. Ajustez vos filtres.',
-    callUs: 'Appelez-nous',
-    emailUs: 'Envoyez-nous un email',
-    visitWebsite: 'Visitez le site web',
-    details: 'Détails',
-    business: 'entreprise',
-    businesses: 'entreprises',
-    found: 'trouvées'
-  },
-  en: {
-    allProvinces: 'All Provinces',
-    allCities: 'All Cities',
-    errorLoading: 'Error loading businesses. Please try again later.',
-    noResults: 'No businesses found. Adjust your filters.',
-    callUs: 'Call us',
-    emailUs: 'Email us',
-    visitWebsite: 'Visit website',
-    details: 'Details',
-    business: 'business',
-    businesses: 'businesses',
-    found: 'found'
-  }
-};
-
-function t(key) {
-  return translations[currentLang]?.[key] || translations.nl[key];
-}
 
 // Initialize Leaflet map
 function initMap() {
