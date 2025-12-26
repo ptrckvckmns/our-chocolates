@@ -67,7 +67,7 @@ function updateMap(businesses) {
           <p class="text-sm mb-2">${business.city}, ${business.province || ''}</p>
           ${business.phone ? `<p class="text-sm"><i class="fas fa-phone mr-1"></i> ${business.phone}</p>` : ''}
           ${business.website ? `<p class="text-sm"><a href="${business.website}" target="_blank" class="text-blue-600 hover:underline"><i class="fas fa-globe mr-1"></i> Website</a></p>` : ''}
-          <a href="/business/${business.id}" class="inline-block mt-2 px-3 py-1 bg-gold text-charcoal rounded text-sm font-medium">Details →</a>
+          <a href="/directory?id=${business.id}" class="inline-block mt-2 px-3 py-1 bg-gold text-charcoal rounded text-sm font-medium">Details →</a>
         </div>
       `;
       
@@ -184,10 +184,9 @@ function displayBusinesses(businesses) {
   container.innerHTML = businesses.map(business => `
     <div class="bg-cognac/20 rounded-lg overflow-hidden border border-gold/30 card-hover">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-6">
-        <div class="flex items-center justify-center bg-gradient-to-br from-cognac to-charcoal rounded-lg h-32 overflow-hidden" style="position: relative;">
+        <a href="/directory?id=${business.id}" class="flex items-center justify-center bg-gradient-to-br from-cognac to-charcoal rounded-lg h-32 overflow-hidden hover:border-2 hover:border-gold transition-all" style="position: relative;">
           ${business.logo_url ? `<img src="${business.logo_url}" alt="${business.name}" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; margin: auto; padding: 0.5rem; box-sizing: border-box;" />` : '<i class="fas fa-candy-cane text-gold text-5xl"></i>'}
-
-        </div>
+        </a>
         
         <div class="md:col-span-3">
           <div class="flex items-start justify-between mb-2">
@@ -229,7 +228,7 @@ function displayBusinesses(businesses) {
               </a>
             ` : ''}
             
-            <a href="/business/${business.id}" class="ml-auto text-gold hover:text-electric-green transition text-sm font-medium">
+            <a href="/directory?id=${business.id}" class="ml-auto text-gold hover:text-electric-green transition text-sm font-medium">
               ${t('details')} <i class="fas fa-arrow-right ml-1"></i>
             </a>
           </div>
