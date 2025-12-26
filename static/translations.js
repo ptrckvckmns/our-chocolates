@@ -974,7 +974,17 @@ const translations = {
 let currentLang = 'nl';
 
 function t(key) {
-  return translations[currentLang]?.[key] || translations.nl[key] || key;
+  // Ensure translations object exists
+  if (!translations) {
+    console.error('Translations object not loaded');
+    return key;
+  }
+  
+  // Get translation with fallback chain
+  const translation = translations[currentLang]?.[key] || translations.nl?.[key];
+  
+  // Return translation or key if not found
+  return translation || key;
 }
 
 function initLanguage() {
@@ -1022,8 +1032,12 @@ function translatePage() {
   const elements = document.querySelectorAll('[data-i18n]');
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (key) {
-      el.textContent = t(key);
+    if (key && translations && translations[currentLang]) {
+      const translation = translations[currentLang][key];
+      // Only update textContent if translation exists
+      if (translation) {
+        el.textContent = translation;
+      }
     }
   });
   
@@ -1031,15 +1045,22 @@ function translatePage() {
   const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
   placeholders.forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
-    if (key) {
-      el.placeholder = t(key);
+    if (key && translations && translations[currentLang]) {
+      const translation = translations[currentLang][key];
+      if (translation) {
+        el.placeholder = translation;
+      }
     }
   });
   
   // Update page title if it has data-i18n-title
   const titleKey = document.body.getAttribute('data-i18n-title');
-  if (titleKey) {
-    document.title = `${t(titleKey)} - ${t('siteTitle')}`;
+  if (titleKey && translations && translations[currentLang]) {
+    const titleTranslation = translations[currentLang][titleKey];
+    const siteTranslation = translations[currentLang]['siteTitle'];
+    if (titleTranslation && siteTranslation) {
+      document.title = `${titleTranslation} - ${siteTranslation}`;
+    }
   }
 }
 
