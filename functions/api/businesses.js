@@ -39,10 +39,21 @@ export async function onRequest(context) {
     const stmt = env.DB.prepare(query);
     const result = await stmt.bind(...params).all();
 
+    // Add display fields based on language
+    const businesses = result.results.map(business => ({
+      ...business,
+      display_description: lang === 'fr' ? (business.description_fr || business.description) :
+                          lang === 'en' ? (business.description_en || business.description) :
+                          business.description,
+      display_specialties: lang === 'fr' ? (business.specialties_fr || business.specialties) :
+                          lang === 'en' ? (business.specialties_en || business.specialties) :
+                          business.specialties
+    }));
+
     return new Response(JSON.stringify({
       success: true,
-      count: result.results.length,
-      businesses: result.results
+      count: businesses.length,
+      businesses: businesses
     }), {
       headers: {
         'Content-Type': 'application/json',
