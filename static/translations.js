@@ -105,8 +105,11 @@ const translations = {
     business: 'bedrijf',
     businesses: 'bedrijven',
     found: 'gevonden',
+    of: 'van',
     noResults: 'Geen bedrijven gevonden. Pas uw filters aan.',
     errorLoading: 'Fout bij laden van bedrijven. Probeer het later opnieuw.',
+    loadMore: 'Toon Meer',
+    advertisement: 'Advertentie',
     
     // Pairings page
     pairingsTitle: 'Chocolade Food Pairings',
@@ -443,8 +446,11 @@ const translations = {
     business: 'entreprise',
     businesses: 'entreprises',
     found: 'trouvées',
+    of: 'de',
     noResults: 'Aucune entreprise trouvée. Ajustez vos filtres.',
     errorLoading: 'Erreur lors du chargement des entreprises. Veuillez réessayer plus tard.',
+    loadMore: 'Voir Plus',
+    advertisement: 'Publicité',
     
     // Pairings page
     pairingsTitle: 'Accords Chocolat',
@@ -781,8 +787,11 @@ const translations = {
     business: 'business',
     businesses: 'businesses',
     found: 'found',
+    of: 'of',
     noResults: 'No businesses found. Adjust your filters.',
     errorLoading: 'Error loading businesses. Please try again later.',
+    loadMore: 'Load More',
+    advertisement: 'Advertisement',
     
     // Pairings page
     pairingsTitle: 'Chocolate Food Pairings',

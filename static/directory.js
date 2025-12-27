@@ -146,6 +146,10 @@ async function loadCities(province) {
   }
 }
 
+// Pagination variables
+let displayedCount = 0;
+const itemsPerPage = 10;
+
 // Load businesses with filters
 async function loadBusinesses() {
   const type = document.getElementById('filterType').value;
@@ -163,8 +167,16 @@ async function loadBusinesses() {
   try {
     const response = await axios.get(`/api/businesses?${params.toString()}`);
     allBusinesses = response.data.businesses || response.data;
+    
+    // Randomize order every time
+    shuffleArray(allBusinesses);
+    
+    // Reset pagination
+    displayedCount = 0;
+    
+    // Display first 10 businesses
     displayBusinesses(allBusinesses);
-    updateMap(allBusinesses); // ← NEW: Update map with filtered results
+    updateMap(allBusinesses); // Update map with all filtered results
   } catch (error) {
     console.error('Error loading businesses:', error);
     document.getElementById('businessList').innerHTML = 
@@ -172,16 +184,33 @@ async function loadBusinesses() {
   }
 }
 
-// Display businesses in list
-function displayBusinesses(businesses) {
+// Shuffle array (Fisher-Yates algorithm)
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// Display businesses in list with pagination
+function displayBusinesses(businesses, append = false) {
   const container = document.getElementById('businessList');
   
   if (!businesses || businesses.length === 0) {
     container.innerHTML = `<p class="text-gray-400 text-center py-12">${t('noResults')}</p>`;
+    // Remove load more button if exists
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    if (loadMoreBtn) loadMoreBtn.remove();
     return;
   }
   
-  container.innerHTML = businesses.map(business => `
+  // Get businesses to display
+  const startIndex = append ? displayedCount : 0;
+  const endIndex = Math.min(startIndex + itemsPerPage, businesses.length);
+  const businessesToShow = businesses.slice(startIndex, endIndex);
+  
+  const businessHTML = businessesToShow.map(business => `
     <div class="bg-cognac/20 rounded-lg overflow-hidden border border-gold/30 card-hover">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-6">
         <a href="/directory?id=${business.id}" class="flex items-center justify-center bg-gradient-to-br from-cognac to-charcoal rounded-lg h-32 overflow-hidden hover:border-2 hover:border-gold transition-all" style="position: relative;">
@@ -237,11 +266,58 @@ function displayBusinesses(businesses) {
     </div>
   `).join('');
   
+  // Append or replace content
+  if (append) {
+    container.insertAdjacentHTML('beforeend', businessHTML);
+  } else {
+    container.innerHTML = businessHTML;
+  }
+  
+  // Update displayed count
+  displayedCount = endIndex;
+  
   // Update results count
-  const count = businesses.length;
-  const businessWord = count === 1 ? t('business') : t('businesses');
+  const totalCount = businesses.length;
+  const businessWord = totalCount === 1 ? t('business') : t('businesses');
   document.getElementById('resultsCount').textContent = 
-    `${count} ${businessWord} ${t('found')}`;
+    `${displayedCount} ${t('of')} ${totalCount} ${businessWord} ${t('found')}`;
+  
+  // Show/hide load more button
+  updateLoadMoreButton(businesses);
+}
+
+// Update load more button visibility
+function updateLoadMoreButton(businesses) {
+  let loadMoreBtn = document.getElementById('loadMoreBtn');
+  
+  if (displayedCount < businesses.length) {
+    // Show button
+    if (!loadMoreBtn) {
+      loadMoreBtn = document.createElement('div');
+      loadMoreBtn.id = 'loadMoreBtn';
+      loadMoreBtn.className = 'text-center mt-8';
+      loadMoreBtn.innerHTML = `
+        <button onclick="loadMore()" class="btn-gold text-charcoal font-bold px-8 py-4 rounded-lg hover:scale-105 transition-transform">
+          <i class="fas fa-chevron-down mr-2"></i>
+          <span data-i18n="loadMore">Toon Meer</span>
+        </button>
+      `;
+      document.getElementById('businessList').parentElement.appendChild(loadMoreBtn);
+      
+      // Translate button
+      translatePage();
+    }
+  } else {
+    // Hide button
+    if (loadMoreBtn) {
+      loadMoreBtn.remove();
+    }
+  }
+}
+
+// Load more businesses
+function loadMore() {
+  displayBusinesses(allBusinesses, true);
 }
 
 
