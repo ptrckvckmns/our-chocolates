@@ -1,4 +1,4 @@
-// Directory page functionality
+// Directory page functionality v2.0 - With pagination
 // Note: currentLang, translations, and t() are provided by translations.js
 let allBusinesses = [];
 let map = null;
@@ -209,6 +209,14 @@ function displayBusinesses(businesses, append = false) {
   const startIndex = append ? displayedCount : 0;
   const endIndex = Math.min(startIndex + itemsPerPage, businesses.length);
   const businessesToShow = businesses.slice(startIndex, endIndex);
+  
+  console.log('Pagination:', {
+    totalBusinesses: businesses.length,
+    startIndex,
+    endIndex,
+    showing: businessesToShow.length,
+    displayedCount
+  });
   
   const businessHTML = businessesToShow.map(business => `
     <div class="bg-cognac/20 rounded-lg overflow-hidden border border-gold/30 card-hover">
