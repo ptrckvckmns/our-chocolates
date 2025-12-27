@@ -45,6 +45,91 @@
     <style>
       body { font-family: 'Inter', sans-serif; }
       h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+      
+      /* Pairing Image Animations */
+      .pairing-image-container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 12px;
+        transform: perspective(1000px);
+      }
+      
+      .pairing-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scale(1.05);
+        filter: brightness(0.9);
+      }
+      
+      .pairing-image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(139, 69, 19, 0.25) 100%);
+        opacity: 1;
+        transition: opacity 0.6s ease;
+        pointer-events: none;
+      }
+      
+      /* Hover Effects */
+      .group:hover .pairing-image {
+        transform: scale(1.1) rotate(1deg);
+        filter: brightness(1.05);
+      }
+      
+      .group:hover .pairing-image-overlay {
+        opacity: 0.6;
+      }
+      
+      /* Floating Animation */
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px) scale(1.05);
+        }
+        50% {
+          transform: translateY(-10px) scale(1.05);
+        }
+      }
+      
+      .pairing-image {
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      /* Shimmer Effect */
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
+        }
+        100% {
+          background-position: 1000px 0;
+        }
+      }
+      
+      .pairing-image-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+        animation: shimmer 3s infinite;
+        z-index: 1;
+        pointer-events: none;
+      }
+      
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .pairing-image-container {
+          height: 250px;
+        }
+      }
     </style>
 </head>
 <body class="bg-charcoal text-gray-100">
@@ -112,6 +197,14 @@
                 <p class="text-gray-300 mb-6 leading-relaxed" data-i18n="whiskyIntro">
                     Whisky en chocolade delen complexe smaakprofielen met hout, specerijen, karamel en rooknoten die elkaar prachtig aanvullen.
                 </p>
+                
+                <!-- Animated Image -->
+                <div class="relative mb-8 overflow-hidden rounded-lg group">
+                    <div class="pairing-image-container">
+                        <img src="/images/belgian-chocolates-decorative-13.jpg" alt="Whisky & Chocolate Pairing" class="pairing-image">
+                        <div class="pairing-image-overlay"></div>
+                    </div>
+                </div>
             
             <div class="space-y-6">
                 <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
@@ -211,6 +304,14 @@
                     Wijn en chocolade creëren magische combinaties wanneer tannines, zuren en zoetigheden in balans zijn.
                 </p>
                 
+                <!-- Animated Image -->
+                <div class="relative mb-8 overflow-hidden rounded-lg group">
+                    <div class="pairing-image-container">
+                        <img src="/images/belgian-chocolates-decorative-14.jpg" alt="Wine & Chocolate Pairing" class="pairing-image">
+                        <div class="pairing-image-overlay"></div>
+                    </div>
+                </div>
+                
                 <div class="space-y-6">
                     <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
                         <h3 class="text-2xl font-bold text-gold mb-2">Donkere Chocolade (70%+)</h3>
@@ -273,6 +374,14 @@
                 <p class="text-gray-300 mb-6 leading-relaxed" data-i18n="coffeeIntro">
                     Koffie en chocolade delen diepe, complexe smaken die perfect harmoniseren wanneer ze goed gecombineerd worden.
                 </p>
+                
+                <!-- Animated Image -->
+                <div class="relative mb-8 overflow-hidden rounded-lg group">
+                    <div class="pairing-image-container">
+                        <img src="/images/belgian-chocolates-decorative-15.jpg" alt="Coffee & Chocolate Pairing" class="pairing-image">
+                        <div class="pairing-image-overlay"></div>
+                    </div>
+                </div>
                 
                 <div class="space-y-6">
                     <div class="bg-cognac/20 rounded-lg p-6 border border-gold/30">
@@ -492,28 +601,28 @@
       <footer class="bg-charcoal border-t border-cognac/30 py-12 px-4">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 class="text-gold font-bold text-lg mb-4">Over</h3>
-            <p class="text-gray-400 text-sm">Belgische Chocolade Gids verbindt chocoladeliefhebbers met de beste ambachtelijke chocolatiers van België.</p>
+            <h3 class="text-gold font-bold text-lg mb-4" data-i18n="footerAboutTitle">Over</h3>
+            <p class="text-gray-400 text-sm" data-i18n="aboutText">Belgische Chocolade Gids verbindt chocoladeliefhebbers met de beste ambachtelijke chocolatiers van België.</p>
           </div>
           <div>
-            <h3 class="text-gold font-bold text-lg mb-4">Snelle Links</h3>
+            <h3 class="text-gold font-bold text-lg mb-4" data-i18n="footerLinksTitle">Snelle Links</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
-              <li><a href="/" class="hover:text-gold transition">Home</a></li>
-              <li><a href="/directory" class="hover:text-gold transition">Gids</a></li>
-              <li><a href="/pairings" class="hover:text-gold transition">Pairings</a></li>
-              <li><a href="/history" class="hover:text-gold transition">Geschiedenis</a></li>
-              <li><a href="/about" class="hover:text-gold transition">Over Ons</a></li>
+              <li><a href="/" class="hover:text-gold transition" data-i18n="home">Home</a></li>
+              <li><a href="/directory" class="hover:text-gold transition" data-i18n="directory">Gids</a></li>
+              <li><a href="/pairings" class="hover:text-gold transition" data-i18n="pairings">Pairings</a></li>
+              <li><a href="/history" class="hover:text-gold transition" data-i18n="history">Geschiedenis</a></li>
+              <li><a href="/about" class="hover:text-gold transition" data-i18n="about">Over Ons</a></li>
             </ul>
           </div>
           <div>
-            <h3 class="text-gold font-bold text-lg mb-4">Contact</h3>
+            <h3 class="text-gold font-bold text-lg mb-4" data-i18n="footerContactTitle">Contact</h3>
             <ul class="space-y-2 text-gray-400 text-sm">
               <li><i class="fas fa-envelope mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2a43444c456a455f58074942454945464b5e4f5904484f">[email&#160;protected]</a></li>
 
             </ul>
           </div>
           <div>
-            <h3 class="text-gold font-bold text-lg mb-4">Volg Ons</h3>
+            <h3 class="text-gold font-bold text-lg mb-4" data-i18n="footerFollowTitle">Volg Ons</h3>
             <div class="flex space-x-4">
               <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-facebook"></i></a>
               <a href="#" class="text-gray-400 hover:text-gold text-2xl transition"><i class="fab fa-instagram"></i></a>
