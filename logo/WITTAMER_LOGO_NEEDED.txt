@@ -1,0 +1,29 @@
+Wittamer Logo Required
+=======================
+
+Please add the Wittamer logo file as:
+  wittamer.jpg
+
+The logo should be:
+- Format: JPEG (.jpg)
+- Recommended size: Similar to other logos (around 40-60KB)
+- Dimensions: Suitable for web display (e.g., 200-400px width)
+- Background: Preferably transparent or white
+
+You can download the logo from:
+- Official website: https://wittamer.com
+- Or use a high-quality image from their branding materials
+
+Once added, the logo will automatically appear in:
+1. Business directory listings (/directory)
+2. Map popup markers
+3. Business detail pages
+
+Current logos in this directory:
+- centho.jpg
+- corne-port-royal.jpg
+- godiva.jpg
+- leonidas.jpg
+- mucho-gusto.jpg
+- neuhaus.jpg
+- pierre-marcolini.jpg
