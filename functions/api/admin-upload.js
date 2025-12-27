@@ -62,6 +62,17 @@ export async function onRequest(context) {
 
     for (const business of businesses) {
       try {
+        // Fix coordinate format if they're large integers (need division by 10,000,000)
+        let latitude = business.latitude;
+        let longitude = business.longitude;
+        
+        if (latitude && Math.abs(latitude) > 1000) {
+          latitude = latitude / 10000000;
+        }
+        if (longitude && Math.abs(longitude) > 1000) {
+          longitude = longitude / 10000000;
+        }
+        
         await env.DB.prepare(`
           INSERT INTO businesses (
             name, type, description, address, postal_code, city, province,
@@ -82,8 +93,8 @@ export async function onRequest(context) {
           business.website || null,
           business.opening_hours || null,
           business.specialties || null,
-          business.latitude || null,
-          business.longitude || null,
+          latitude || null,
+          longitude || null,
           business.featured || 0,
           business.description_fr || null,
           business.description_en || null,
