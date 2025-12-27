@@ -424,14 +424,16 @@
         try {
           // Get language from translations.js global var or default to 'nl'
           const lang = window.currentLang || 'nl';
-          // Get specific featured chocolatiers by ID: Godiva (2), Neuhaus (1), Pierre Marcolini (5)
-          const response = await axios.get('/api/businesses?lang=' + lang);
+          // Get businesses where featured = 1
+          const response = await axios.get('/api/businesses?featured=1&lang=' + lang);
           const data = response.data;
-          const allBusinesses = data.businesses || [];
+          let businesses = data.businesses || [];
           
-          // Filter for the 3 featured chocolatiers
-          const featuredIds = [2, 1, 5]; // Godiva, Neuhaus, Pierre Marcolini
-          const businesses = allBusinesses.filter(b => featuredIds.includes(b.id));
+          // Shuffle the array to show random featured businesses each time
+          businesses = businesses.sort(() => Math.random() - 0.5);
+          
+          // Take only the first 3
+          businesses = businesses.slice(0, 3);
           
           const container = document.getElementById('featuredBusinesses');
           if (!container) return;
@@ -443,8 +445,11 @@
           
           container.innerHTML = businesses.map(business => `
             <div class="bg-cognac/20 rounded-lg overflow-hidden border border-gold/30 card-hover">
-              <div class="h-48 bg-gradient-to-br from-cognac to-charcoal flex items-center justify-center">
-                <i class="fas fa-candy-cane text-gold text-6xl"></i>
+              <div class="h-48 bg-gradient-to-br from-cognac to-charcoal flex items-center justify-center p-4">
+                ${business.logo_url ? 
+                  `<img src="${business.logo_url}" alt="${business.name}" class="max-h-full max-w-full object-contain">` :
+                  `<i class="fas fa-candy-cane text-gold text-6xl"></i>`
+                }
               </div>
               <div class="p-6">
                 <div class="flex items-start justify-between mb-2">

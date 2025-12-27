@@ -7,6 +7,7 @@ export async function onRequest(context) {
   const province = url.searchParams.get('province');
   const city = url.searchParams.get('city');
   const search = url.searchParams.get('search');
+  const featured = url.searchParams.get('featured');
   const lang = url.searchParams.get('lang') || 'nl';
 
   try {
@@ -32,6 +33,10 @@ export async function onRequest(context) {
       query += ' AND (name LIKE ? OR address LIKE ? OR city LIKE ?)';
       const searchPattern = `%${search}%`;
       params.push(searchPattern, searchPattern, searchPattern);
+    }
+
+    if (featured === '1') {
+      query += ' AND featured = 1';
     }
 
     query += ' ORDER BY name';
