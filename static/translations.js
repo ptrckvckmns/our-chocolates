@@ -1126,10 +1126,11 @@ function setupLanguageSwitchers() {
       const newLang = e.target.value;
       localStorage.setItem('language', newLang);
       
-      // Update URL with new language
+      // Update URL with new language, preserving hash
       const urlParams = new URLSearchParams(window.location.search);
       urlParams.set('lang', newLang);
-      window.location.search = urlParams.toString();
+      const hash = window.location.hash;
+      window.location.href = window.location.pathname + '?' + urlParams.toString() + hash;
     });
   });
 }

@@ -504,6 +504,20 @@
       
       // Load on page load
       loadFeaturedBusinesses();
+      
+      // Handle pairing card clicks to preserve language parameter
+      document.addEventListener('DOMContentLoaded', () => {
+        const pairingLinks = document.querySelectorAll('a[href^="/pairings#"]');
+        pairingLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const hash = link.getAttribute('href').split('#')[1];
+            const urlParams = new URLSearchParams(window.location.search);
+            const lang = urlParams.get('lang') || localStorage.getItem('language') || 'nl';
+            window.location.href = `/pairings?lang=${lang}#${hash}`;
+          });
+        });
+      });
     </script>
   <script src="/static/translations.js"></script>
 </body>
