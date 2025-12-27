@@ -304,7 +304,7 @@ const translations = {
     // History CTA
     historyCTATitle: 'Ontdek de Traditie',
     historyCTAText: 'Bezoek de chocolatiers die deze rijke traditie voortzetten en proef het verschil van generaties vakmanschap.',
-    historyCTAButton: 'Bekijk Directory',
+    historyCTAButton: 'Bekijk onze gids',
     
     // About page
     aboutTitle: 'Over Onze Gids',

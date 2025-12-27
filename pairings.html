@@ -522,10 +522,17 @@
           </div>
         </div>
         <div class="max-w-7xl mx-auto mt-8 pt-8 border-t border-cognac/30 text-center text-gray-500 text-sm">
-          <p>&copy; 2024 Belgische Chocolade Gids. Alle rechten voorbehouden</p>
+          <p data-i18n="footerText">&copy; 2024 Belgische Chocolade Gids. Alle rechten voorbehouden</p>
         </div>
       </footer>
     
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>  <script src="/static/translations.js"></script>
+    
+    <script>
+      // Mobile menu toggle
+      document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+      });
+    </script>
 </body>
 </html>
