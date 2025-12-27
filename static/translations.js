@@ -312,6 +312,21 @@ const translations = {
     aboutFeature2Title: 'Authentieke Kwaliteit',
     aboutFeature2Text: 'Alleen chocolatiers die trouw blijven aan traditionele methoden en kwaliteitsingrediënten komen in onze gids.',
     
+    // Add Business Form
+    addBusinessTitle: 'Voeg Uw Bedrijf Toe - Belgische Chocolade Gids',
+    addBusinessHeading: 'Voeg Uw Bedrijf Toe',
+    addBusinessSubheading: 'Word onderdeel van België\'s meest uitgebreide chocoladegids',
+    formBusinessName: 'Bedrijfsnaam *',
+    formAddress: 'Adres *',
+    formWebsite: 'Website',
+    formEmail: 'E-mailadres *',
+    formPhone: 'Telefoonnummer',
+    formCategory: 'Categorie *',
+    formSelectCategory: 'Selecteer een categorie',
+    formSubmit: 'Verzenden',
+    formSuccess: 'Bedankt! Uw aanvraag is verzonden. We nemen binnenkort contact met u op.',
+    formError: 'Er is een fout opgetreden. Probeer het later opnieuw.',
+    
     // Footer
     footerAboutTitle: 'Over',
     footerLinksTitle: 'Snelle Links',
@@ -635,6 +650,21 @@ const translations = {
     aboutFeature2Title: 'Qualité Authentique',
     aboutFeature2Text: 'Seuls les chocolatiers fidèles aux méthodes traditionnelles et aux ingrédients de qualité figurent dans notre guide.',
     
+    // Add Business Form
+    addBusinessTitle: 'Ajoutez Votre Entreprise - Guide du Chocolat Belge',
+    addBusinessHeading: 'Ajoutez Votre Entreprise',
+    addBusinessSubheading: 'Rejoignez le guide du chocolat le plus complet de Belgique',
+    formBusinessName: 'Nom de l\'entreprise *',
+    formAddress: 'Adresse *',
+    formWebsite: 'Site Web',
+    formEmail: 'Adresse e-mail *',
+    formPhone: 'Numéro de téléphone',
+    formCategory: 'Catégorie *',
+    formSelectCategory: 'Sélectionnez une catégorie',
+    formSubmit: 'Envoyer',
+    formSuccess: 'Merci ! Votre demande a été envoyée. Nous vous contacterons bientôt.',
+    formError: 'Une erreur s\'est produite. Veuillez réessayer plus tard.',
+    
     // Footer
     footerAboutTitle: 'À Propos',
     footerLinksTitle: 'Liens Rapides',
@@ -957,6 +987,21 @@ const translations = {
     aboutFeature1Text: 'We help you discover smaller artisan chocolatiers that are often overlooked but deliver exceptional quality.',
     aboutFeature2Title: 'Authentic Quality',
     aboutFeature2Text: 'Only chocolatiers who remain true to traditional methods and quality ingredients are included in our guide.',
+    
+    // Add Business Form
+    addBusinessTitle: 'Add Your Business - Belgian Chocolate Guide',
+    addBusinessHeading: 'Add Your Business',
+    addBusinessSubheading: 'Join Belgium\'s most comprehensive chocolate guide',
+    formBusinessName: 'Business Name *',
+    formAddress: 'Address *',
+    formWebsite: 'Website',
+    formEmail: 'Email Address *',
+    formPhone: 'Phone Number',
+    formCategory: 'Category *',
+    formSelectCategory: 'Select a category',
+    formSubmit: 'Submit',
+    formSuccess: 'Thank you! Your request has been sent. We will contact you soon.',
+    formError: 'An error occurred. Please try again later.',
     
     // Footer
     footerAboutTitle: 'About',
