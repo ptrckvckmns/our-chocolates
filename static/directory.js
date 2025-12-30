@@ -193,6 +193,39 @@ function shuffleArray(array) {
   return array;
 }
 
+// Insert ads between business listings
+function insertAds(businessHTML) {
+  const businessCards = businessHTML.split('</div>\n    </div>');
+  const adInterval = 6; // Show ad after every 6 businesses
+  let result = [];
+  
+  businessCards.forEach((card, index) => {
+    if (card.trim()) {
+      result.push(card + '</div>\n    </div>');
+      
+      // Insert ad after every 6th business (but not after the last one)
+      if ((index + 1) % adInterval === 0 && index < businessCards.length - 2) {
+        result.push(`
+    <div class="bg-cognac/10 p-4 rounded-lg border border-gold/20">
+      <p class="text-xs text-gray-400 text-center mb-2">${t('advertisement')}</p>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="fluid"
+           data-ad-layout-key="-ft-3t+ar-cd-51"
+           data-ad-client="ca-pub-5342479402101014"
+           data-ad-slot="8957424850"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+        `);
+      }
+    }
+  });
+  
+  return result.join('');
+}
+
 // Display businesses in list with pagination
 function displayBusinesses(businesses, append = false) {
   const container = document.getElementById('businessList');
@@ -274,11 +307,14 @@ function displayBusinesses(businesses, append = false) {
     </div>
   `).join('');
   
+  // Insert ads into business listings
+  const businessHTMLWithAds = insertAds(businessHTML);
+  
   // Append or replace content
   if (append) {
-    container.insertAdjacentHTML('beforeend', businessHTML);
+    container.insertAdjacentHTML('beforeend', businessHTMLWithAds);
   } else {
-    container.innerHTML = businessHTML;
+    container.innerHTML = businessHTMLWithAds;
   }
   
   // Update displayed count
