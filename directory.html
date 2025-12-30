@@ -146,9 +146,9 @@
             <p id="resultsCount" class="text-gray-400 mb-4">Laden...</p>
             
             <!-- Map and List Layout -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                 <!-- Map -->
-                <div class="lg:col-span-1">
+                <div class="lg:col-span-1 order-2 lg:order-1">
                     <div class="bg-cognac/20 p-4 rounded-lg mb-4 border border-gold/30">
                         <div class="flex items-center justify-between mb-2">
                             <h2 class="text-xl font-bold text-gold">
@@ -159,52 +159,13 @@
                         <!-- Leaflet Map Container -->
                         <div id="mapContainer"></div>
                     </div>
-                    
-                    <!-- Google Ads - Desktop Only -->
-                    <div class="hidden lg:block bg-cognac/20 p-4 rounded-lg border border-gold/30 sticky top-4">
-                        <div class="text-center mb-2">
-                            <p class="text-xs text-gray-400" data-i18n="advertisement">Advertentie</p>
-                        </div>
-                        <div class="bg-charcoal/50 rounded border border-gold/20 overflow-hidden" style="min-height: 600px;">
-                            <!-- Google AdSense - In-feed Ad -->
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-format="fluid"
-                                 data-ad-layout-key="-gc+3r+68-9q-29"
-                                 data-ad-client="ca-pub-5342479402101014"
-                                 data-ad-slot=""></ins>
-                            <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                        </div>
-                    </div>
-                </div>
                 
                 <!-- Business List -->
-                <div class="lg:col-span-2">
+                <div class="lg:col-span-1 order-1 lg:order-2">
                     <div id="businessList" class="space-y-4">
                         <div class="text-center text-gray-400 py-12">
                             <i class="fas fa-spinner fa-spin text-4xl mb-4"></i>
                             <p>Laden...</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Google Ads - Mobile Only -->
-                    <div class="lg:hidden mt-8 bg-cognac/20 p-4 rounded-lg border border-gold/30">
-                        <div class="text-center mb-2">
-                            <p class="text-xs text-gray-400" data-i18n="advertisement">Advertentie</p>
-                        </div>
-                        <div class="bg-charcoal/50 rounded border border-gold/20 overflow-hidden" style="min-height: 250px;">
-                            <!-- Google AdSense - In-feed Ad -->
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-format="fluid"
-                                 data-ad-layout-key="-gc+3r+68-9q-29"
-                                 data-ad-client="ca-pub-5342479402101014"
-                                 data-ad-slot=""></ins>
-                            <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
                         </div>
                     </div>
                 </div>
