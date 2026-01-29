@@ -68,10 +68,7 @@ IP Adres: ${request.headers.get('CF-Connecting-IP') || 'Unknown'}
         body: JSON.stringify({
           personalizations: [
             {
-              to: [{ email: 'patrick@live-communication.info', name: 'Patrick' }],
-              dkim_domain: 'our-chocolates.be',
-              dkim_selector: 'mailchannels',
-              dkim_private_key: context.env.DKIM_PRIVATE_KEY
+              to: [{ email: 'patrick@live-communication.info', name: 'Patrick' }]
             }
           ],
           from: {
