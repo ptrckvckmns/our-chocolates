@@ -17,6 +17,8 @@ const translations = {
     
     // Search bar
     searchLocation: 'Locatie',
+    searchAllProvinces: 'Alle Provincies',
+    searchBrussels: 'Brussels Hoofdstedelijk Gewest',
     searchType: 'Type',
     searchKeyword: 'Zoekwoord',
     searchButton: 'Zoeken',
@@ -358,6 +360,8 @@ const translations = {
     
     // Search bar
     searchLocation: 'Emplacement',
+    searchAllProvinces: 'Toutes les Provinces',
+    searchBrussels: 'Région de Bruxelles-Capitale',
     searchType: 'Type',
     searchKeyword: 'Mot-clé',
     searchButton: 'Rechercher',
@@ -699,6 +703,8 @@ const translations = {
     
     // Search bar
     searchLocation: 'Location',
+    searchAllProvinces: 'All Provinces',
+    searchBrussels: 'Brussels Capital Region',
     searchType: 'Type',
     searchKeyword: 'Keyword',
     searchButton: 'Search',

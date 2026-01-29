@@ -201,7 +201,20 @@
             <!-- Search Bar -->
             <div class="max-w-4xl mx-auto bg-cognac/30 backdrop-blur p-6 rounded-lg border border-gold/30">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                    <input type="text" id="searchLocation" data-i18n-placeholder="searchLocation" placeholder="Locatie" class="px-4 py-3 rounded bg-charcoal border border-cognac focus:border-gold focus:outline-none text-gray-100">
+                    <select id="searchProvince" class="px-4 py-3 rounded bg-charcoal border border-cognac focus:border-gold focus:outline-none text-gray-100">
+                        <option value="" data-i18n="searchAllProvinces">Alle Provincies</option>
+                        <option value="Antwerpen">Antwerpen</option>
+                        <option value="Limburg">Limburg</option>
+                        <option value="Oost-Vlaanderen">Oost-Vlaanderen</option>
+                        <option value="Vlaams-Brabant">Vlaams-Brabant</option>
+                        <option value="West-Vlaanderen">West-Vlaanderen</option>
+                        <option value="Brussels Hoofdstedelijk Gewest" data-i18n="searchBrussels">Brussels Hoofdstedelijk Gewest</option>
+                        <option value="Henegouwen">Henegouwen</option>
+                        <option value="Luik">Luik</option>
+                        <option value="Luxemburg">Luxemburg</option>
+                        <option value="Namen">Namen</option>
+                        <option value="Waals-Brabant">Waals-Brabant</option>
+                    </select>
                     <select id="searchType" class="px-4 py-3 rounded bg-charcoal border border-cognac focus:border-gold focus:outline-none text-gray-100">
                         <option value="" data-i18n="searchAllTypes">Alle Types</option>
                         <option value="winkel" data-i18n="searchWinkel">Winkel</option>
@@ -492,21 +505,21 @@
       
       // Search
       function searchBusinesses() {
-        const location = document.getElementById('searchLocation').value;
+        const province = document.getElementById('searchProvince').value;
         const type = document.getElementById('searchType').value;
         const keyword = document.getElementById('searchKeyword').value;
         
         const lang = window.currentLang || 'nl';
         let query = '?lang=' + lang;
+        if (province) query += '&province=' + encodeURIComponent(province);
         if (type) query += '&type=' + encodeURIComponent(type);
         if (keyword) query += '&search=' + encodeURIComponent(keyword);
-        if (location) query += '&city=' + encodeURIComponent(location);
         
         window.location.href = '/directory' + query;
       }
       
       // Enter key search
-      ['searchLocation', 'searchType', 'searchKeyword'].forEach(id => {
+      ['searchProvince', 'searchType', 'searchKeyword'].forEach(id => {
         document.getElementById(id)?.addEventListener('keypress', (e) => {
           if (e.key === 'Enter') searchBusinesses();
         });
