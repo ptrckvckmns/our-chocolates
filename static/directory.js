@@ -92,17 +92,23 @@ async function initDirectory() {
   const city = urlParams.get('city') || '';
   const province = urlParams.get('province') || '';
   
-  // Set form values
-  if (type) document.getElementById('filterType').value = type;
-  if (search) document.getElementById('searchKeyword').value = search;
-  if (city) document.getElementById('filterCity').value = city;
-  if (province) document.getElementById('filterProvince').value = province;
-  
   // Initialize map
   initMap();
   
-  // Load provinces and businesses
+  // Load provinces FIRST (before setting values)
   await loadProvinces();
+  
+  // NOW set form values (after provinces dropdown is populated)
+  if (type) document.getElementById('filterType').value = type;
+  if (search) document.getElementById('searchKeyword').value = search;
+  if (province) {
+    document.getElementById('filterProvince').value = province;
+    // Load cities for this province
+    await loadCities(province);
+  }
+  if (city) document.getElementById('filterCity').value = city;
+  
+  // Load businesses with filters applied
   await loadBusinesses();
 }
 
